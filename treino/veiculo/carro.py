@@ -1,9 +1,10 @@
-from veiculo.veiculo import Veiculo
+from veiculo import Veiculo
 
 class Carro(Veiculo):
-    def __init__(self, portas):
+    def __init__(self, marca, modelo, portas):
+        super().__init__(marca, modelo)
         self.portas = portas
         
-    def __str__(self, mensagem):
-        return f'O carro {self._modelo} da marca {self._marca} tem {self.portas} portas'
-    
+    def __str__(self):
+        status = "ligado" if self._ligado else "desligado"
+        return f'{self._marca} {self._modelo} - Portas: {self.portas} - Status: {status}'
